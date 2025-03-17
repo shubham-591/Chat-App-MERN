@@ -32,7 +32,7 @@ export const sendMessage = async (req, res) => {
         // await newMessage.save();
 
         // So we use promise to make them run parallel
-        await Promise.all([conversation.save(), message.save()]);
+        await Promise.all([conversation.save(), newMessage.save()]);
 
         res.status(201).json(newMessage);
 
